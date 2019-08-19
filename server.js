@@ -1,31 +1,30 @@
-import express from 'express';
-import bodyParser from 'body-parser';
-import expressGraphQL from 'express-graphql';
-import cors from 'cors';
-import mongoose from 'mongoose';
-require('dotenv').config();
-const app = express();
-app.use(
-  cors(),
-  bodyParser.json()
-)
-app.use(
-  "/graphql",
-  expressGraphQL({
-  schema: {},
-  rootValue: {},
-  graphiql: true
-  })
-);
-function main() {
-  const port = process.env.PORT || 5000;
-  const uri = `mongodb://${process.env.DB_USER}:${process.env.DB_PASS}@geoaep-gimoh.mongodb.net/vaporcenter?retryWrites=true&w=majority/`;
-  mongoose.connect(uri, { useNewUrlParser: true })
-  .then(() => {
-    app.listen(port, () => console.log(`Server is listening on port: ${port}`));
-  })
-  .catch(err => {
-    console.log(err);
-  })
-}
-main();
+const { ApolloServer, gql } = require('apollo-server')
+const { importSchema } = require('graphql-import')
+const schemaPath = './schema/index.graphql'
+const mongoose = require('mongoose')
+const resolvers = require('./graphql/resolvers')
+// const bodyParser = require('body-parser')
+// const cors = require('cors')
+
+
+
+
+
+const options = { reconnectTries: Number.MAX_VALUE, reconnectInterval: 500, poolSize: 5, useNewUrlParser: true, useFindAndModify: false }
+mongoose.connect("mongodb+srv://vapor-center:chrome00audi@geoaep-gimoh.mongodb.net/VaporCenter?retryWrites=true", options)
+mongoose.set('useCreateIndex', true)
+mongoose.connection.on('error', (err) => {
+    console.log('Erro no banco ' + err)
+})
+mongoose.connection.on('connected', () => {
+    console.log('DB connect !')
+})
+
+const server = new ApolloServer({
+    typeDefs: importSchema(schemaPath),
+    resolvers
+})
+
+server.listen().then(({ url })  => {
+  console.log(`Executando API em ${url}`)
+})

@@ -1,0 +1,18 @@
+type Fabricante {
+    _id: String!
+    nome: String!
+    descricao: String
+    cidade: String
+    # sabores_id: []
+    estado: String
+    urlSite: String
+}
+
+input FabricandoInput {
+    _id: String!
+    nome: String!
+    descricao: String
+    cidade: String
+    estado: String
+    urlSite: String
+}
