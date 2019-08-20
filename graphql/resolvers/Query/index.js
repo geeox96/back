@@ -1,5 +1,5 @@
-const fabricantes = require('./fabricante')
+const fabricante = require('./fabricante')
 
 module.exports = {
-...fabricantes,
+    ...fabricante,
 }
