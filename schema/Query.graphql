@@ -1,0 +1,4 @@
+type Query {
+    # Consultar todos os fabricantes
+    consultarFabricantes: [Fabricante]
+}
