@@ -1,4 +1,4 @@
 type Mutation {
     # Crindo um novo fabricante
-    novoFabricante(input: FabricandoInput! ): Fabricante!
+    novoFabricante(input: FabricanteInput! ): Fabricante
 }

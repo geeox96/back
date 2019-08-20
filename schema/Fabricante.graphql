@@ -5,14 +5,18 @@ type Fabricante {
     cidade: String
     # sabores_id: []
     estado: String
-    urlSite: String
+    url_site: String
+    url_insta: String
+    url_face: String
+    ativo: Boolean
 }
 
-input FabricandoInput {
-    _id: String!
+input FabricanteInput {
     nome: String!
     descricao: String
     cidade: String
     estado: String
-    urlSite: String
+    url_site: String
+    url_insta: String
+    url_face: String
 }

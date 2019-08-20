@@ -26,8 +26,18 @@ const FabricanteModel = new Schema({
         type: String,
         required: true,
     },
-    urlSite: {
+    url_site: {
         type: String,
+    },
+    url_insta: {
+        type: String,
+    },
+    url_face: {
+        type: String,
+    },
+    ativo: {
+        type: Boolean,
+        default: false
     }
 }, { timestamps: true, versionKey: false })
 
@@ -39,4 +49,4 @@ const FabricanteModel = new Schema({
 // })
 
 
-module.exports = mongoose.model('Usuario', FabricanteModel)
+module.exports = mongoose.model('Fabricante', FabricanteModel)

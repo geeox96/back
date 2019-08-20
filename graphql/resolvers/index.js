@@ -1,9 +1,9 @@
 const Query = require('./Query')
 const Mutation = require('./Mutation')
-const fabricantes = require('./type/fabricante')
+const Fabricante = require('./type/Fabricante')
 
 module.exports = {
     Query,
     Mutation,
-    fabricantes
+    Fabricante
 }
