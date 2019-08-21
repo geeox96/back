@@ -3,8 +3,8 @@ type Fabricante {
     nome: String!
     descricao: String
     cidade: String
-    # sabores_id: []
-    estado: String
+    # liquidos_id: []
+    estado: String!
     url_site: String
     url_insta: String
     url_face: String
@@ -15,7 +15,7 @@ input FabricanteInput {
     nome: String!
     descricao: String
     cidade: String
-    estado: String
+    estado: String!
     url_site: String
     url_insta: String
     url_face: String

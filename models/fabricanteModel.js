@@ -19,7 +19,7 @@ const FabricanteModel = new Schema({
     cidade: {
         type: String
     },
-    sabores_id: {
+    liquidos_id: {
         type: Array
     },
     estado: {
