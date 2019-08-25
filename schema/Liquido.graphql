@@ -1,0 +1,26 @@
+
+type Liquido {
+    _id: String!
+    nome: String!
+    img: String
+    descricao: String
+    info: String
+    # tags_id: [tag]
+    marca_id: [Fabricante!]
+    pg: Int
+    vg: Int
+    valor: Float
+    nota: Int
+    ativo: Boolean
+    visitas: Int
+}
+
+input LiquidoInput {
+    nome: String!
+    img: String
+    descricao: String!
+    marca_id: String!
+    pg: Int
+    vg: Int
+    valor: Float!
+}

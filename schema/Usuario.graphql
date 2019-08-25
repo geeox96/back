@@ -1,0 +1,23 @@
+scalar Date
+
+type Usuario {
+    _id: String!
+    email: String!
+    nome: String!
+    data_nascimento: Date
+    tipo_conta: Int!
+    fabricante_id: Fabricante
+    ativo: Boolean!
+}
+
+input UsuarioInput {
+    email: String!
+    senha: String!
+    nome: String!
+    data_nascimento: Date!
+}
+
+input LoginInput {
+    email: String!
+    senha: String!
+}

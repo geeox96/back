@@ -6,8 +6,7 @@ const uuidv4 = require('uuid/v4')
 const FabricanteModel = new Schema({
     _id: {
         type: String,
-        default: uuidv4,
-        required: true
+        default: uuidv4
     },
     nome: {
         type: String,
@@ -40,7 +39,7 @@ const FabricanteModel = new Schema({
         default: false
     }
 }, { timestamps: true, versionKey: false })
-
+    
 // FabricanteSchema.pre('save', async function(next) {
 //     if (!this.isModified('senha')) return next()
 
@@ -49,4 +48,4 @@ const FabricanteModel = new Schema({
 // })
 
 
-module.exports = mongoose.model('Fabricante', FabricanteModel)
+module.exports = mongoose.model('fabricante', FabricanteModel)

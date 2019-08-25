@@ -1,3 +1,5 @@
+#import Liquido from 'Liquido.graphql'
+#import Usuario from 'Usuario.graphql'
 #import Fabricante from 'Fabricante.graphql'
 #import Query from 'Query.graphql'
 #import Mutation from 'Mutation.graphql'
