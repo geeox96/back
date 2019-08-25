@@ -1,4 +1,29 @@
 type Query {
     # Consultar todos os fabricantes
     consultarFabricantes: [Fabricante]
+
+    # Consultar todos os fabricantes que estão ativos no sistema
+    consultarFabricantesAtivos: [Fabricante]
+
+    
+
+
+
+    # Consultar todos os usuario
+    consultarUsuarios: [Usuario]
+
+    # Consultar um usuario passando ID
+    consultarUsuarioID(id: String!): Usuario!
+
+    # Consultar todos os usuarios que estão ativos no sistema
+    consultarUsuariosAtivos: [Usuario]
+
+    # Logar usuario
+    logar(input: LoginInput!): String!
+
+    
+
+
+    # Consulta Todos os Juices !
+    consultarLiquidos: [Liquido!]
 }

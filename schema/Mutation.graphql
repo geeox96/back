@@ -1,4 +1,16 @@
 type Mutation {
     # Crindo um novo fabricante
     novoFabricante(input: FabricanteInput! ): Fabricante
+    # Editar um fabricante Usuarios
+    editarFabricante(input: FabricanteInput! ): Fabricante
+    # Editar um fabricante Administrador
+    editarFabricanteAdmin(input: FabricanteAdminInput! ): Fabricante
+
+
+
+    # Crindo um novo fabricante
+    novoUsuario(input: UsuarioInput! ): Usuario
+
+    #novo
+    novoLiquido(input: LiquidoInput! ): Liquido
 }

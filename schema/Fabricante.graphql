@@ -3,8 +3,8 @@ type Fabricante {
     nome: String!
     descricao: String
     cidade: String
-    # liquidos_id: []
-    estado: String!
+    liquidos_id: [Liquido]
+    estado: String
     url_site: String
     url_insta: String
     url_face: String
@@ -12,6 +12,7 @@ type Fabricante {
 }
 
 input FabricanteInput {
+    _id: String!
     nome: String!
     descricao: String
     cidade: String
@@ -19,4 +20,17 @@ input FabricanteInput {
     url_site: String
     url_insta: String
     url_face: String
+}
+
+input FabricanteAdminInput {
+    _id: String!
+    nome: String
+    descricao: String
+    cidade: String
+    liquidos_id: String
+    estado: String
+    url_site: String
+    url_insta: String
+    url_face: String
+    ativo: Boolean
 }
