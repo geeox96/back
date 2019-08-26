@@ -18,8 +18,9 @@ const FabricanteModel = new Schema({
     cidade: {
         type: String
     },
-    liquidos_id: {
-        type: Array
+    liquido_id: {
+        type: Array,
+        ref: 'liquido'
     },
     estado: {
         type: String,

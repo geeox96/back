@@ -6,7 +6,7 @@ type Liquido {
     descricao: String
     info: String
     # tags_id: [tag]
-    marca_id: [Fabricante!]
+    fabricante_id: Fabricante!
     pg: Int
     vg: Int
     valor: Float
@@ -19,7 +19,8 @@ input LiquidoInput {
     nome: String!
     img: String
     descricao: String!
-    marca_id: String!
+    info: String
+    fabricante_id: String!
     pg: Int
     vg: Int
     valor: Float!

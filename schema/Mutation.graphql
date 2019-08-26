@@ -11,6 +11,8 @@ type Mutation {
     # Crindo um novo fabricante
     novoUsuario(input: UsuarioInput! ): Usuario
 
-    #novo
+
+
+    #novo Liquido
     novoLiquido(input: LiquidoInput! ): Liquido
 }

@@ -25,5 +25,8 @@ type Query {
 
 
     # Consulta Todos os Juices !
-    consultarLiquidos: [Liquido!]
+    consultarLiquidos: [Liquido]
+
+    # Consulta os juices ativos
+    consultarLiquidosAtivos: [Liquido]
 }
