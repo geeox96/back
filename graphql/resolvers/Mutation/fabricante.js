@@ -37,7 +37,7 @@ module.exports = {
                 nome: input.nome,
                 descricao: input.descricao,
                 cidade: input.cidade,
-                liquidos_id: input.liquidos_id,
+                liquido_id: input.liquido_id,
                 estado: input.estado,
                 url_site: input.url_site,
                 url_insta: input.url_insta,

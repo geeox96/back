@@ -26,7 +26,7 @@ const LiquidoModel = new Schema({
         type: String,
         ref: 'tag'
     },
-    marca_id: {
+    fabricante_id: {
         type: String,
         ref: 'fabricante'
     },
@@ -38,17 +38,18 @@ const LiquidoModel = new Schema({
     },
     valor: {
         type: Number,
-        refs: 'fabricante'
     },
     nota: {
         type: Number,
+        default: 0
     },
     ativo: {
         type: Boolean,
         default: true
     },
     visitas: {
-        type: Number
+        type: Number,
+        default: 0
     }
 }, { timestamps: true, versionKey: false })
 
