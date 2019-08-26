@@ -1,6 +1,6 @@
 const Query = require('./Query')
 const Mutation = require('./Mutation')
-const Fabricante = require('./Type/Fabricante')
+const Fabricante = require('./Type/fabricante')
 const Usuario = require('./Type/Usuario')
 const Liquido = require('./Type/Liquido')
 
