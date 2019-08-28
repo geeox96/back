@@ -2,6 +2,8 @@ type Fabricante {
     _id: String!
     nome: String!
     descricao: String
+    telefone: String
+    whatsapp: String
     cidade: String
     liquido_id: [Liquido]
     estado: String
@@ -12,9 +14,10 @@ type Fabricante {
 }
 
 input FabricanteInput {
-    _id: String!
     nome: String!
     descricao: String
+    telefone: String
+    whatsapp: String
     cidade: String
     estado: String!
     url_site: String
@@ -23,9 +26,10 @@ input FabricanteInput {
 }
 
 input FabricanteAdminInput {
-    _id: String!
     nome: String
     descricao: String
+    telefone: String
+    whatsapp: String
     cidade: String
     estado: String
     url_site: String

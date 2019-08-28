@@ -1,11 +1,10 @@
 const mongoose = require('mongoose')
 const Schema = mongoose.Schema
-const uuidv4 = require('uuid/v4')
+
 
 const LiquidoModel = new Schema({
     _id: {
         type: String,
-        default: uuidv4
     },
     nome: {
         type: String,
@@ -38,6 +37,9 @@ const LiquidoModel = new Schema({
     },
     valor: {
         type: Number,
+    },
+    link: {
+        type: String
     },
     nota: {
         type: Number,
