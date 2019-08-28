@@ -13,6 +13,8 @@ type Mutation {
 
 
 
-    #novo Liquido
+    # Criar Liquido
     novoLiquido(input: LiquidoInput! ): Liquido
+    # Deletar liquido
+    deletarLiquido(input: LiquidoDeleteInput! ): Boolean
 }

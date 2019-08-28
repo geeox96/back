@@ -15,13 +15,19 @@ const FabricanteModel = new Schema({
     descricao: {
         type: String
     },
+    telefone: {
+        type: String
+    },
+    whatsapp: {
+        type: String
+    },
     cidade: {
         type: String
     },
-    liquido_id: {
-        type: Array,
+    liquido_id: [{
+        type: String,
         ref: 'liquido'
-    },
+    }],
     estado: {
         type: String,
         required: true,

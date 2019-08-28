@@ -5,8 +5,9 @@ type Liquido {
     img: String
     descricao: String
     info: String
+    link: String
     # tags_id: [tag]
-    fabricante_id: Fabricante!
+    fabricante_id: Fabricante
     pg: Int
     vg: Int
     valor: Float
@@ -18,10 +19,16 @@ type Liquido {
 input LiquidoInput {
     nome: String!
     img: String
+    link: String
     descricao: String!
     info: String
     fabricante_id: String!
     pg: Int
     vg: Int
     valor: Float!
+}
+
+input LiquidoDeleteInput {
+    _id: String!
+    fabricante_id: String!
 }
