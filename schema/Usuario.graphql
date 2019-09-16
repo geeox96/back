@@ -10,6 +10,14 @@ type Usuario {
     ativo: Boolean!
 }
 
+type LoginType {
+    token: String
+    id: String
+    ativo: Boolean
+    tipo_conta: String
+    erro: Int
+}
+
 input UsuarioInput {
     email: String!
     senha: String!

@@ -1,58 +1,60 @@
-const mongoose = require('mongoose')
-const Schema = mongoose.Schema
+const mongoose = require("mongoose");
+const Schema = mongoose.Schema;
 
-
-const LiquidoModel = new Schema({
+const LiquidoModel = new Schema(
+  {
     _id: {
-        type: String,
+      type: String
     },
     nome: {
-        type: String,
-        required: true
+      type: String,
+      required: true
     },
     img: {
-        type: String,
-        default: ''
+      type: String,
+      default: ""
     },
     descricao: {
-        type: String,
-        required: true
+      type: String,
+      required: true
     },
     info: {
-        type: String
+      type: String
     },
     tag_id: {
-        type: String,
-        ref: 'tag'
+      type: String,
+      ref: "tag"
     },
     fabricante_id: {
-        type: String,
-        ref: 'fabricante'
+      type: String,
+      ref: "fabricante"
     },
     pg: {
-        type: Number,
+      type: Number
     },
     vg: {
-        type: Number,
+      type: Number
     },
     valor: {
-        type: Number,
+      type: Number
     },
     link: {
-        type: String
+      type: String
     },
     nota: {
-        type: Number,
-        default: 0
+      type: Number,
+      default: 0
     },
     ativo: {
-        type: Boolean,
-        default: true
+      type: Boolean,
+      default: true
     },
     visitas: {
-        type: Number,
-        default: 0
+      type: Number,
+      default: 0
     }
-}, { timestamps: true, versionKey: false })
+  },
+  { timestamps: true, versionKey: false }
+);
 
-module.exports = mongoose.model('liquido', LiquidoModel)
+module.exports = mongoose.model("liquido", LiquidoModel);

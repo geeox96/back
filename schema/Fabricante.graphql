@@ -25,11 +25,26 @@ input FabricanteInput {
     url_face: String
 }
 
+input EditarFabricanteInput{
+    _id: String!
+    nome: String!
+    descricao: String
+    telefone: String
+    whatsapp: String
+    cidade: String
+    estado: String!
+    url_site: String
+    url_insta: String
+    url_face: String
+}
+
 input FabricanteAdminInput {
+    _id: String!
     nome: String
     descricao: String
     telefone: String
     whatsapp: String
+    liquido_id: [String]
     cidade: String
     estado: String
     url_site: String

@@ -19,7 +19,7 @@ type Query {
     consultarUsuariosAtivos: [Usuario]
 
     # Logar usuario
-    logar(input: LoginInput!): String!
+    logar(input: LoginInput!): LoginType!
 
     
 
