@@ -12,9 +12,7 @@ module.exports = async ({ req }) => {
     const token = auth && auth.substring(7)
 
     if(token){
-
         const valido = jwt.verify(token, process.env.APP_SECRET)
-    
         if(valido) {
             switch (valido.tipo_conta) {
                 case 110: 
