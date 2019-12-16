@@ -1,31 +1,51 @@
 scalar Date
 
 type Usuario {
-    _id: String!
-    email: String!
-    nome: String!
-    data_nascimento: Date
-    tipo_conta: Int!
-    fabricante_id: Fabricante
-    ativo: Boolean!
+  _id: String!
+  email: String!
+  nome: String!
+  data_nascimento: Date
+  tipo_conta: Int!
+  fabricante_id: Fabricante
+  ativo: Boolean!
+  img: String
 }
 
 type LoginType {
-    token: String
-    id: String
-    ativo: Boolean
-    tipo_conta: String
-    erro: Int
+  token: String
+  id: String
+  ativo: Boolean
+  tipo_conta: String
+  erro: Int
 }
 
 input UsuarioInput {
-    email: String!
-    senha: String!
-    nome: String!
-    data_nascimento: Date!
+  email: String!
+  senha: String!
+  nome: String!
+  data_nascimento: Date!
 }
 
 input LoginInput {
-    email: String!
-    senha: String!
+  email: String!
+  senha: String!
+}
+
+type Query {
+  # Consultar todos os usuario
+  consultarUsuarios: [Usuario]
+
+  # Consultar um usuario passando ID
+  consultarUsuarioID(id: String!): Usuario!
+
+  # Consultar todos os usuarios que estão ativos no sistema
+  consultarUsuariosAtivos: [Usuario]
+
+  # Logar usuario
+  logar(input: LoginInput!): LoginType!
+}
+
+type Mutation {
+  # Crindo um novo fabricante
+  novoUsuario(input: UsuarioInput!): Usuario
 }
