@@ -1,54 +1,74 @@
 type Fabricante {
-    _id: String!
-    nome: String!
-    descricao: String
-    telefone: String
-    whatsapp: String
-    cidade: String
-    liquido_id: [Liquido]
-    estado: String
-    url_site: String
-    url_insta: String
-    url_face: String
-    ativo: Boolean
+  _id: String!
+  nome: String!
+  descricao: String
+  img: String
+  telefone: String
+  premium: Boolean
+  whatsapp: String
+  cidade: String
+  liquido_id: [Liquido]
+  estado: String
+  url_site: String
+  url_insta: String
+  url_face: String
+  ativo: Boolean
 }
 
 input FabricanteInput {
-    nome: String!
-    descricao: String
-    telefone: String
-    whatsapp: String
-    cidade: String
-    estado: String!
-    url_site: String
-    url_insta: String
-    url_face: String
+  nome: String!
+  descricao: String
+  telefone: String
+  whatsapp: String
+  cidade: String
+  estado: String!
+  url_site: String
+  url_insta: String
+  url_face: String
 }
 
-input EditarFabricanteInput{
-    _id: String!
-    nome: String!
-    descricao: String
-    telefone: String
-    whatsapp: String
-    cidade: String
-    estado: String!
-    url_site: String
-    url_insta: String
-    url_face: String
+input EditarFabricanteInput {
+  _id: String!
+  nome: String!
+  descricao: String
+  telefone: String
+  whatsapp: String
+  cidade: String
+  estado: String!
+  url_site: String
+  url_insta: String
+  url_face: String
 }
 
 input FabricanteAdminInput {
-    _id: String!
-    nome: String
-    descricao: String
-    telefone: String
-    whatsapp: String
-    liquido_id: [String]
-    cidade: String
-    estado: String
-    url_site: String
-    url_insta: String
-    url_face: String
-    ativo: Boolean
+  _id: String!
+  nome: String
+  descricao: String
+  img: String
+  telefone: String
+  whatsapp: String
+  liquido_id: [String]
+  cidade: String
+  estado: String
+  url_site: String
+  url_insta: String
+  url_face: String
+  ativo: Boolean
+}
+
+type Query {
+  # Consultar todos os fabricantes
+  consultarFabricantes: [Fabricante]
+
+  # Consultar todos os fabricantes que estão ativos no sistema
+  consultarFabricantesAtivos: [Fabricante]
+}
+
+type Mutation {
+  # Crindo um novo fabricante
+  novoFabricante(input: FabricanteInput!): Fabricante
+  # Editar um fabricante Usuarios
+  editarFabricante(input: FabricanteInput!): Fabricante
+  # Editar um fabricante Administrador
+  editarFabricanteAdmin(input: FabricanteAdminInput!): Fabricante
 }
