@@ -25,8 +25,19 @@ const FabricanteModel = new Schema(
     whatsapp: {
       type: String
     },
+    email_contato: { 
+      type: String
+    },
     cidade: {
       type: String
+    },
+    premium: {
+      type: Boolean,
+      default: false
+    },
+    ratio: {
+      type: Number,
+      default: 0
     },
     liquido_id: [
       {

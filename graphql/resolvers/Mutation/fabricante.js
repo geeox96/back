@@ -8,6 +8,9 @@ module.exports = {
       const fabricante = await FabricanteModel.create({
         nome: input.nome,
         descricao: input.descricao,
+        email_contato: input.email_contato,
+        telefone: input.telefone,
+        whatsapp: input.whatsapp,
         cidade: input.cidade,
         estado: input.estado,
         url_site: input.url_site,
@@ -23,6 +26,7 @@ module.exports = {
       return await FabricanteModel.findByIdAndUpdate(input._id, {
         nome: input.nome,
         descricao: input.descricao,
+        email_contato: input.email_contato,
         cidade: input.cidade,
         telefone: input.telefone,
         whatsapp: input.whatsapp,
@@ -72,12 +76,14 @@ module.exports = {
         cidade: input.cidade,
         telefone: input.telefone,
         whatsapp: input.whatsapp,
+        email_contato: input.email_contato,
         liquido_id: input.liquido_id,
         estado: input.estado,
         url_site: input.url_site,
         url_insta: input.url_insta,
         url_face: input.url_face,
-        ativo: input.ativo
+        ativo: input.ativo,
+        premium: input.premium
       });
     }
   }

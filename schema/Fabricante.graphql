@@ -4,7 +4,9 @@ type Fabricante {
   descricao: String
   img: String
   telefone: String
+  email_contato: String
   premium: Boolean
+  ratio: Int
   whatsapp: String
   cidade: String
   liquido_id: [Liquido]
@@ -20,6 +22,7 @@ input FabricanteInput {
   descricao: String
   telefone: String
   whatsapp: String
+  email_contato: String
   cidade: String
   estado: String!
   url_site: String
@@ -33,6 +36,7 @@ input EditarFabricanteInput {
   descricao: String
   telefone: String
   whatsapp: String
+  email_contato: String
   cidade: String
   estado: String!
   url_site: String
@@ -47,6 +51,7 @@ input FabricanteAdminInput {
   img: String
   telefone: String
   whatsapp: String
+  email_contato: String
   liquido_id: [String]
   cidade: String
   estado: String
@@ -54,6 +59,7 @@ input FabricanteAdminInput {
   url_insta: String
   url_face: String
   ativo: Boolean
+  premium: Boolean
 }
 
 type Query {
