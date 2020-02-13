@@ -1,52 +1,71 @@
-const mongoose = require('mongoose')
-const Schema = mongoose.Schema
-const uuidv4 = require('uuid/v4')
+const mongoose = require("mongoose");
+const Schema = mongoose.Schema;
+const uuidv4 = require("uuid/v4");
 // const bcrypt = require('bcrypt')
 
-const FabricanteModel = new Schema({
+const FabricanteModel = new Schema(
+  {
     _id: {
-        type: String,
-        default: uuidv4
+      type: String,
+      default: uuidv4
     },
     nome: {
-        type: String,
-        required: true
+      type: String,
+      required: true
     },
     descricao: {
-        type: String
+      type: String
+    },
+    img: {
+      type: String
     },
     telefone: {
-        type: String
+      type: String
     },
     whatsapp: {
-        type: String
+      type: String
+    },
+    email_contato: { 
+      type: String
     },
     cidade: {
-        type: String
+      type: String
     },
-    liquido_id: [{
+    premium: {
+      type: Boolean,
+      default: false
+    },
+    ratio: {
+      type: Number,
+      default: 0
+    },
+    liquido_id: [
+      {
         type: String,
-        ref: 'liquido'
-    }],
+        ref: "liquido"
+      }
+    ],
     estado: {
-        type: String,
-        required: true,
+      type: String,
+      required: true
     },
     url_site: {
-        type: String,
+      type: String
     },
     url_insta: {
-        type: String,
+      type: String
     },
     url_face: {
-        type: String,
+      type: String
     },
     ativo: {
-        type: Boolean,
-        default: false
+      type: Boolean,
+      default: false
     }
-}, { timestamps: true, versionKey: false })
-    
+  },
+  { timestamps: true, versionKey: false }
+);
+
 // FabricanteSchema.pre('save', async function(next) {
 //     if (!this.isModified('senha')) return next()
 
@@ -54,5 +73,4 @@ const FabricanteModel = new Schema({
 //     return next()
 // })
 
-
-module.exports = mongoose.model('fabricante', FabricanteModel)
+module.exports = mongoose.model("fabricante", FabricanteModel);

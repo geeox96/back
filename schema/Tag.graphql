@@ -1,0 +1,19 @@
+type Tag {
+  _id: String!
+  nome: String
+  descricao: String
+}
+
+input TagInput {
+  nome: String!
+  descricao: String!
+}
+
+type Query {
+  # Consultar Tags cadastradas
+  consultarTags: [Tag]
+}
+
+type Mutation {
+  criarTag(input: TagInput!): Boolean
+}

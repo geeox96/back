@@ -1,34 +1,48 @@
-
 type Liquido {
-    _id: String!
-    nome: String!
-    img: String
-    descricao: String
-    info: String
-    link: String
-    # tags_id: [tag]
-    fabricante_id: Fabricante
-    pg: Int
-    vg: Int
-    valor: Float
-    nota: Int
-    ativo: Boolean
-    visitas: Int
+  _id: String!
+  nome: String!
+  img: String
+  descricao: String
+  info: String
+  link: String
+  # tags_id: [tag]
+  fabricante_id: Fabricante
+  pg: Int
+  vg: Int
+  valor: Float
+  nota: Int
+  ativo: Boolean
+  visitas: Int
 }
 
 input LiquidoInput {
-    nome: String!
-    img: String
-    link: String
-    descricao: String!
-    info: String
-    fabricante_id: String!
-    pg: Int
-    vg: Int
-    valor: Float!
+  nome: String!
+  img: String
+  link: String
+  descricao: String!
+  info: String
+  fabricante_id: String!
+  pg: Int
+  vg: Int
+  valor: Float!
 }
 
 input LiquidoDeleteInput {
-    _id: String!
-    fabricante_id: String!
+  _id: String!
+  fabricante_id: String!
+}
+
+type Query {
+  # Consulta Todos os Juices !
+  consultarLiquidos: [Liquido]
+
+  # Consulta os juices ativos
+  consultarLiquidosAtivos: [Liquido]
+}
+
+type Mutation {
+  # Criar Liquido
+  novoLiquido(input: LiquidoInput!): Liquido
+  # Deletar liquido
+  deletarLiquido(input: LiquidoDeleteInput!): Boolean
 }
